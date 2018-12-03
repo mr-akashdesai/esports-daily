@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* MOBILE AND GLOBAL STYLES */
 /* applies to screens smaller than 500px (first breakpoint) */
 /* and above unless overwritten below */
@@ -6,24 +5,62 @@ body {
   margin: 0px;
   background: #1a1a1a;
   color: #b3b3b3;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  /*grid-gap: 6px; */
-  grid-template-areas:
-    "headline"
-    "report"
-    "footer";
+.FN_headline {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.FN_report {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.FN_NewsCard {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.CSGO_headline {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.CSGO_report {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.CSGO_NewsCard {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.socials {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .menu {
   background: #555;
-  text-align: center;
+  text-align: left;
   color: #fff;
   line-height: 2em;
 }
@@ -33,6 +70,7 @@ body {
 }
 
 nav {
+  box-shadow: 0 1px 1px 0 black;
   display: none;
   justify-content: center;
   min-width: 500px;
@@ -115,6 +153,32 @@ nav a:hover {
   h2 {
     font-size: 0.4em;
   }
+
+  .CSGO_grid-container {
+    display: grid;
+    grid-template-columns: 400px auto auto;
+  }
+
+  .CSGO_headline {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .CSGO_report {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .CSGO_NewsCard {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
 }
 
 /* TABLET STYLES */
@@ -146,16 +210,18 @@ nav a:hover {
     text-align: center;
   }
 
-  .grid {
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "report report newscard"
-      "footer  footer  footer";
+  .FN_grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+  }
+
+  .CSGO_grid-container {
+    display: grid;
+    grid-template-columns: 400px auto auto;
   }
 }
 
-/* DESKTOP STYLES */
 @media screen and (min-width: 1000px) {
 
   /* applies to screens wider than 999px */
@@ -185,6 +251,17 @@ h2 {
   font-family: 'Raleway', sans-serif;
 }
 
+h3 {
+  padding-left: 15px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  font-size: 23px;
+  font-family: 'Raleway', sans-serif;
+}
+
 h1:root {
   font-size: calc(1vw + 1vh + .5vmin);
 }
@@ -193,10 +270,6 @@ h2:root {
   font-size: calc(1vw + 1vh + .5vmin);
 }
 
-footer{
-  grid-area: footer;
-
-}
 .header {
   position: fixed;
   top: 0;
@@ -254,6 +327,7 @@ div.HeaderText {
 }
 
 img {
+  box-shadow: 0 1px 2px 0 black;
   vertical-align: middle;
 }
 
@@ -267,7 +341,8 @@ img {
 }
 
 /* Caption text */
-.text {
+.slideshow-caption {
+  box-shadow: 0 1px 2px 0 black;
   font-family: "Roboto", sans-serif;
   background: black;
   color: #f2f2f2;
@@ -275,7 +350,7 @@ img {
   padding: 8px 12px;
   position: absolute;
   top: 400px;
-  width: 703px;
+  width: 701px;
   text-align: center;
 }
 
@@ -329,8 +404,6 @@ img {
     font-size: 11px
   }
 }
-
-.ArticleCard_Container {}
 
 .ArticleCard_card {
   position: relative;
@@ -391,16 +464,13 @@ img {
   color: #838694;
 }
 
-.NewsCard_column {
-grid-area: newscard;
-}
-
 .NewsCard_container {
+  box-shadow: 0 1px 2px 0 black;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   background: #333333;
   border: 1px black solid;
-  height: 400px;
+  height: 330px;
   width: 350px;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -422,6 +492,7 @@ grid-area: newscard;
   padding: 10px;
   color: white;
   background: linear-gradient(to bottom, rgba(63, 29, 99, 1) 0%, rgba(47, 0, 76, 1) 100%);
+  box-shadow: 0 1px 2px 0 black;
 }
 
 .NewsCard_date {
@@ -430,6 +501,7 @@ grid-area: newscard;
 }
 
 .NewsCard_featureImage {
+  box-shadow: 0 1px 2px 0 black;
   display: flex;
   justify-content: center;
   height: 215px;
@@ -437,6 +509,7 @@ grid-area: newscard;
 }
 
 .NewsCard_thumbnail {
+  box-shadow: 0 1px 2px 0 black;
   width: 100%;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -460,10 +533,10 @@ grid-area: newscard;
 }
 
 .NewsCard_title {
-  font-size: 20px;
+  font-size: 14px;
   line-height: inherit;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 10px;
 }
 
 @media (max-width: 500px) {
@@ -535,7 +608,7 @@ grid-area: newscard;
   font-family: "Roboto", sans-serif;
   color: white;
   bottom: 0px;
-  font-size: 20px;
+  font-size: 18px;
   display: inline-block;
   position: fixed;
   padding: 8px 12px;
@@ -543,6 +616,7 @@ grid-area: newscard;
 }
 
 .image_box {
+  box-shadow: 0 0.5px 0.5px 0 black;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -554,6 +628,7 @@ grid-area: newscard;
   position: relative;
   padding: 5px;
   padding-left: 40px;
+  width: auto;
 }
 
 .image_box:hover .image_overlay {
@@ -591,21 +666,20 @@ grid-area: newscard;
   }
 }
 
-#headline_container {
-  grid-area: headline;
-  display: block
+#FN_headline_container {
+  display: block;
   position: relative;
   padding: 0px;
   margin: 0px;
   background: url("https://i.imgur.com/oXvVDC1.png");
   background-position: center;
   background-size: cover;
-  height: 245px;
+  height: 370px;
   width: 100%;
   box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, .8);
 }
 
-.headline_box_caption {
+.FN_headline_box_caption {
   font-family: "Titillium", sans-serif;
   color: white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
@@ -613,15 +687,15 @@ grid-area: newscard;
   font-size: 2em;
   display: inline-block;
   width: 100%;
-  margin-top: 175px;
+  margin-top: 295px;
 }
 
 @media (min-width: 500px) {
-  #headline_container {
-    height: 220px;
+  #FN_headline_container {
+    height: 230px;
   }
 
-  .headline_box_caption {
+  .FN_headline_box_caption {
     margin-top: 175px;
   }
 
@@ -631,12 +705,12 @@ grid-area: newscard;
 }
 
 @media (min-width: 768px) {
-  #headline_container {
-    height: 270px;
+  #FN_headline_container {
+    height: 320px;
   }
 
-  .headline_box_caption {
-    margin-top: 210px;
+  .FN_headline_box_caption {
+    margin-top: 260px;
   }
 
   h2 {
@@ -645,12 +719,12 @@ grid-area: newscard;
 }
 
 @media (min-width: 992px) {
-  #headline_container {
-    height: 320px;
+  #FN_headline_container {
+    height: 370px;
   }
 
-  .headline_box_caption {
-    margin-top: 240px;
+  .FN_headline_box_caption {
+    margin-top: 290px;
   }
 
   h2 {
@@ -658,401 +732,63 @@ grid-area: newscard;
   }
 }
 
-.report_container{
-  padding: 10px;
-  grid-area: report;
-}
-=======
-/* MOBILE AND GLOBAL STYLES */
-/* applies to screens smaller than 500px (first breakpoint) */
-/* and above unless overwritten below */
-body {
-  margin: 0;
-  background: #1a1a1a;
-  color: #b3b3b3;
-  font-family: Roboto;
+.FN_report_container {
+  padding: 15px 0px 0px 20px;
 }
 
-header {
-  grid-area: header;
-}
-
-main {
-  grid-area: content;
-}
-
-footer {
-  grid-area: footer;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  /* OR- grid-template-rows: repeat(5, 1fr) */
-  grid-template-areas:
-    "menu"
-    "content"
-    "footer";
-}
-
-.menu {
-  background: #555;
-  text-align: center;
-  color: #fff;
-  line-height: 2em;
-}
-
-.menu-toggle {
-  display: flex;
-}
-
-nav {
-  clear: both;
-  grid-area: menu;
-  display: none;
-  justify-content: center;
-  min-width: 500px;
-  flex-direction: column;
-  overflow: hidden;
-background-color: #333;
-position: relative;
-font-family: 'Poppins', sans-serif;
-display: flex;
-justify-content: flex-start;
-background: linear-gradient(to bottom, rgba(53, 53, 53, 1) 0%, rgba(38, 38, 38, 1) 100%);
-}
-
-nav a {
-  padding: 1.25em 1.5em;
-  text-decoration: none;
-  transition: all 1.5s;
-  padding: 0.75em 2.5em;
-  color: white;
-  background: linear-gradient(to bottom, rgba(63, 29, 99, 1) 0%, rgba(47, 0, 76, 1) 100%);
-  text-decoration: none;
-  transition: all 1.5s;
-  display: inherit;
-
-}
-.navbar-toggle {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-    color: rgba(255,255,255,0.8);
-    font-size: 24px;
-}
-
-
-nav a:hover {
-  color: black;
-  background: #bcb5e0;
-}
-
-/* TABLET STYLES */
-@media screen and (min-width: 500px) {
-
-  /* applies to screens wider than 499px */
-  body {
-    background: #1a1a1a;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-  }
-
-  /* just change the menu colours on hover above mobile widths */
-  nav a:hover {
-    color: #dfd;
-    background: #797;
-  }
-}
-
-/* DESKTOP STYLES */
-@media screen and (min-width: 1000px) {
-  .grid {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    /* OR- grid-template-rows: repeat(4, 1fr) */
-    grid-template-areas:
-      "header header"
-      "intro menu"
-      "content menu"
-      "footer footer";
-  }
-
-  /* applies to screens wider than 999px */
-  body {
-    background-color: #1a1a1a;
-  }
-  }
-
-
-h1 {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
-  -webkit-text-stroke: 1px #b3b3b3;
-  font-weight: bold;
-  font-family: 'Raleway', sans-serif;
-  font-size: 45px;
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 48px;
-  z-index: 10;
-  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-}
-
-#headerImage {
-  height: 110px;
-  width: 100%;
-  background: #7c7c7c;
-  position: static;
-  overflow: hidden;
-  text-align: left;
-  background-image: url("https://i.imgur.com/ZT2h7aO.jpg");
-  background-repeat: repeat-x;
-  padding: 0px;
-  background-size: cover;
-}
-
-div.HeaderText {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 47%, rgba(0, 0, 0, 0.65) 94%);
-  overflow: hidden;
-  margin-top: 20px;
-  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
-  padding: 0px 20px;
-  width: 100%;
-  position: static;
-  text-align: left;
-  display: block;
-  -webkit-text-stroke: 1px #330080;
-}
-
-.first {
-  background: linear-gradient(to bottom, rgba(93, 49, 117, 1) 0%, rgba(85, 23, 193, 1) 100%);
-  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.space {
-  margin-top: 150px;
-}
-
-.homeSlides {
-  display: none
-}
-
-img {
-  vertical-align: middle;
-}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  position: absolute;
-  left: 0px;
-  width: 750px;
-  padding: 10px;
-}
-
-/* Caption text */
-.text {
-  font-family: "Roboto", sans-serif;
-  background: black;
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 400px;
-  width: 703px;
-  text-align: center;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: .4
-  }
-
-  to {
-    opacity: 1
-  }
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next, .text {
-    font-size: 11px
-  }
-}
-
-.ArticleCard_Container {}
-
-.ArticleCard_card {
-  position: relative;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  border: 2px solid transparent;
-  border-bottom: 1px solid #d5d5d5;
-  box-sizing: border-box;
-  left: 770px;
-  font-family: "Roboto", sans-serif;
-  width: 1000px;
-}
-
-.ArticleCard_card::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.ArticleCard_card:hover {
-  padding-bottom: 0;
-  border: 2px solid #330066;
-}
-
-.ArticleCard_card:hover .ArticleCard_thumbnailImage--2ASrz {
-  opacity: 1;
-}
-
-.ArticleCard_articleLink {
-  display: block;
-  outline: none;
-  text-decoration: none;
-  color: inherit;
-}
-
-.ArticleCard_article {
-  padding: 5px 5px 5px 10px;
-}
-
-.ArticleCard_active {
-  opacity: 1;
-}
-
-.ArticleCard_articleEsport {
-  color: #a64dff;
-}
-
-.ArticleCard_articleTitle {
-  padding: 10px 0;
-  color: #b3b3b3;
-}
-
-.ArticleCard_articleBody {
-  color: #b3b3b3
-}
-
-.ArticleCard_articleDate {
-  color: #838694;
-}
-
-/* Add some padding inside the card container */
-.ArticleIndexContainer {
-  padding: 2px 16px;
-  display: flex;
-}
-
-.NewsCard_container {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  background: #333333;
+.FN_NewsCard_container {
+  box-shadow: 0 1px 2px 0 black;
+  font-family: "Titillium", sans-serif;
+  font-size: 14px;
   border: 1px black solid;
-  height: 400px;
-  width: 386px;
+  height: auto;
+  width: 350px;
   margin-bottom: 10px;
   box-sizing: border-box;
+  background: linear-gradient(to bottom, rgba(58, 0, 66, 1) 1%, rgba(49, 0, 86, 1) 100%);
 }
 
-.NewsCard_container:hover {
+.FN_NewsCard_container:hover {
   border-color: #a64dff;
 }
 
-.NewsCard_link {
+.FN_NewsCard_link {
   border: none;
   outline: none;
   text-decoration: none;
   color: inherit;
 }
 
-.NewsCard_header {
+.FN_NewsCard_header {
+  box-shadow: 0 1px 2px 0 black;
+  font-family: "Roboto", sans-serif;
   display: flex;
   padding: 10px;
   color: white;
-  background: linear-gradient(to bottom, rgba(63, 29, 99, 1) 0%, rgba(47, 0, 76, 1) 100%);
+  background: linear-gradient(to bottom, rgba(58, 0, 66, 1) 1%, rgba(49, 0, 86, 1) 100%);
 }
 
-.NewsCard_date {
-  padding-left: 230px;
+.FN_NewsCard_date {
+  padding-left: 210px;
   text-align: right;
 }
 
-.NewsCard_featureImage {
+.FN_NewsCard_featureImage {
   display: flex;
   justify-content: center;
-  height: 215px;
+  height: auto;
+  min-width: 250px;
+  max-height: 150px;
   overflow: hidden;
 }
 
-.NewsCard_thumbnail {
+.FN_NewsCard_thumbnail {
   width: 100%;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.NewsCard_bodyContainer {
+.FN_NewsCard_bodyContainer {
   position: relative;
   height: calc(100% - 311px);
   overflow: hidden;
@@ -1069,124 +805,490 @@ img {
   }
 }
 
-.NewsCard_title {
-  font-size: 20px;
+.FN_NewsCard_title {
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
   line-height: inherit;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 10px;
+  color: white;
 }
 
-@media (max-width: $screen-xs-max) {
-  .container {
+@media (max-width: 500px) {
+  .FN_NewsCard_container {
     height: auto;
+    width: inherit;
+    min-width: 315px;
   }
 
-  .featureImage {
+  .FN_NewsCard_date {
+    padding-left: 160px;
+    text-align: right;
+  }
+
+  .FN_NewsCard_row {
+    padding: 100px 0px 0px 10px;
+  }
+
+  .FN_NewsCard_featureImage {
     height: 250px;
   }
 }
 
-@media (max-width: $screen-xs-max) {
-  .container {
+@media (max-width: 800px) {
+  .FN_NewsCard_container {
     height: auto;
   }
 
-  .featureImage {
+  .FN_NewsCard_featureImage {
     height: 250px;
   }
 }
 
-.NewsCard_column {
+.FN_NewsCard_column {
   float: left;
   padding: 10px;
 }
 
 /* Clearfix (clear floats) */
-.NewsCard_row::after {
+.FN_NewsCard_row::after {
   content: "";
   clear: both;
 }
 
-.image_column {
+#CSGO_headline_container {
+  display: block;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  background: url("https://i.imgur.com/VAJpbih.png");
+  background-position: center;
+  background-size: cover;
+  height: 370px;
+  width: 100%;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, .8);
+}
+
+.CSGO_headline_box_caption {
+  font-family: "Titillium", sans-serif;
+  color: white;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  padding: 5px 50px 5px 20px;
+  font-size: 2em;
+  display: inline-block;
+  width: 100%;
+  margin-top: 325px;
+}
+
+@media (min-width: 500px) {
+  #CSGO_headline_container {
+    height: 220px;
+  }
+
+  .CSGO_headline_box_caption {
+    margin-top: 175px;
+  }
+
+  h2 {
+    font-size: 0.4em;
+  }
+}
+
+@media (min-width: 768px) {
+  #CSGO_headline_container {
+    height: 320px;
+  }
+
+  .CSGO_headline_box_caption {
+    margin-top: 260px;
+  }
+
+  h2 {
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: 992px) {
+  #CSGO_headline_container {
+    height: 370px;
+  }
+
+  .CSGO_headline_box_caption {
+    margin-top: 290px;
+  }
+
+  h2 {
+    font-size: 0.8em;
+  }
+}
+
+.CSGO_report_container {
+  padding: 15px 0px 20px 0px;
+  margin-left: 0px;
+}
+
+.CSGO_NewsCard_container {
+  box-shadow: 0 1px 2px 0 black;
+  font-family: "Titillium", sans-serif;
+  font-size: 14px;
+  border: 1px black solid;
+  height: auto;
+  width: 350px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, rgba(58, 0, 66, 1) 1%, rgba(49, 0, 86, 1) 100%);
+}
+
+.CSGO_NewsCard_container:hover {
+  border-color: #a64dff;
+}
+
+.CSGO_NewsCard_link {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.CSGO_NewsCard_header {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  padding: 10px;
+  color: white;
+  background: linear-gradient(to bottom, rgba(58, 0, 66, 1) 1%, rgba(49, 0, 86, 1) 100%);
+}
+
+.CSGO_NewsCard_date {
+  padding-left: 210px;
+  text-align: right;
+}
+
+.CSGO_NewsCard_featureImage {
+  display: flex;
+  justify-content: center;
+  height: auto;
+  min-width: 150px;
+  overflow: hidden;
+}
+
+.CSGO_NewsCard_thumbnail {
+  width: 100%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.CSGO_NewsCard_bodyContainer {
+  position: relative;
+  height: calc(100% - 311px);
+  overflow: hidden;
+  padding: 10px;
+
+  &::after {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, $background-tertiary 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    content: "";
+  }
+}
+
+.CSGO_NewsCard_title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: inherit;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .CSGO_NewsCard_container {
+    height: auto;
+    width: inherit;
+    min-width: 315px;
+  }
+
+  .CSGO_NewsCard_date {
+    padding-left: 160px;
+    text-align: right;
+  }
+
+  .CSGO_NewsCard_row {
+    padding: 100px 0px 0px 10px;
+  }
+
+  .CSGO_NewsCard_featureImage {
+    height: 250px;
+  }
+}
+
+@media (max-width: 800px) {
+  .CSGO_NewsCard_container {
+    height: auto;
+  }
+
+  .CSGO_NewsCard_featureImage {
+    height: 250px;
+  }
+}
+
+.CSGO_NewsCard_column {
   float: left;
+  padding: 10px;
 }
 
 /* Clearfix (clear floats) */
-.image_row::after {
+.CSGO_NewsCard_row::after {
   content: "";
   clear: both;
 }
 
-.image_overlay {
+.socials {
+  padding: 15px 0px 0px 20px;
+  padding: 20px;
+  position: static;
+}
+
+.csgoScorecard_match-result {
+  box-shadow: 0 1px 2px 0 black;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.csgoScorecard_match-result-top {
+  background: linear-gradient(to bottom, rgba(45, 48, 51, 1) 1%, rgba(0, 0, 0, 1) 100%);
+  border-bottom: 1px solid black;
+  font-size: 10px;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between
+}
+
+.csgoScorecard_match-result-top .csgoScorecard_match-type {
+  text-align: right;
+}
+
+.csgoScorecard_match-result-middle {
+  display: flex;
+  text-align: center;
+}
+
+.csgoScorecard_match-result-team-con {
+  flex: 1 0 0;
+  position: relative;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.csgoScorecard_match-result-team-flag-left, .csgoScorecard_match-result-team-flag-right {
+  width: auto;
+  height: 93px;
   position: absolute;
   top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background: linear-gradient(to bottom, rgba(150, 150, 150, 0.5) 0%, rgba(89, 89, 89, 0.5) 100%);
+  opacity: .15;
+  z-index: 1;
+  border: 0
 }
 
-.image_box .image_box_caption {
-  font-family: "Roboto", sans-serif;
-  color: white;
-  bottom: 0px;
-  font-size: 20px;
+.csgoScorecard_match-result-team-flag-left {
+  -webkit-mask-image: linear-gradient(to right, white 10%, rgba(255, 255, 255, 0) 100%);
+  left: 0
+}
+
+.csgoScorecard_match-result-team-flag-right {
+  -webkit-mask-image: linear-gradient(to left, white 10%, rgba(255, 255, 255, 0) 100%);
+  right: 0
+}
+
+.csgoScorecard_match-result-team-logo-con {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px
+}
+
+.csgoScorecard_match-result-score {
   display: inline-block;
-  position: absolute;
-  padding: 8px 12px;
-  background: black
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  padding: 2px;
+  vertical-align: middle;
+  font-size: 18px;
+  color: white;
+  font-weight: 700
 }
 
-.image_box {
-  box-sizing: border-box;
-  position: relative;
+.csgoScorecard_match-result-score.scorelost {
+  background-color: red;
+}
+
+.csgoScorecard_match-result-score.scorewon {
+  background-color: green;
+}
+
+.csgoScorecard_match-result-map {
   display: flex;
-  padding: 4px;
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: black;
 }
 
-.image_container {
-  display: block;
-  position: relative;
-  padding: 5px;
-  padding-left: 40px;
+.csgoScorecard_match-result-map:nth-last-of-type(even) {
+  background-color: #2D2D2D;
 }
 
-.image_box:hover .image_overlay {
-  opacity: 1;
+.csgoScorecard_match-result-map-score-faded {
+  flex: 1 0 0;
+  opacity: .5
 }
 
-.image_box .image_overlay {
-  -moz-transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
+.csgoScorecard_match-result-map-score-won {
+  flex: 1 0 0;
+  color: #08a500;
+  font-weight: 700
 }
 
-.image_box:hover .image_overlay,
-.image_box.active .image_overlay {
-  -moz-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
+.csgoScorecard_match-result-map-score-lost {
+  flex: 1 0 0;
+  color: #480303;
+  font-weight: 700
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .image_container {
-    flex: 50%;
-    max-width: 50%;
-  }
+.csgoScorecard_match-stats {
+  box-shadow: 0 1px 2px 0 black;
+  font-size: 12px
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .image_container {
-    flex: 100%;
-    max-width: 100%;
-  }
+.csgoScorecard_match-stats-table {
+  width: 100%;
+  font-size: 12px;
 }
->>>>>>> 55016a55cddab2a23e377c3a354543491c9a51fe
+
+.csgoScorecard_match-stats-header {
+  background: linear-gradient(to bottom, rgba(45, 48, 51, 1) 1%, rgba(0, 0, 0, 1) 100%);
+}
+
+.csgoScorecard_match-stats-row {
+  border-top: 1px solid black;
+  background-color: #272727;
+}
+
+.csgoScorecard_match-stats-row:nth-child(even) {
+  background-color: black;
+}
+
+.csgoScorecard_match-stats-team {
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0
+}
+
+.csgoScorecard_match-stats-kd {
+  width: 55px;
+  text-align: center
+}
+
+.csgoScorecard_match-stats-kdDiff {
+  width: 34px;
+  text-align: center
+}
+
+.csgoScorecard_match-stats-adr {
+  width: 34px;
+  text-align: center
+}
+
+.csgoScorecard_match-stats-rating {
+  width: 80px;
+  text-align: center
+}
+
+.csgoScorecard_match-stats-logo {
+  height: 16px
+}
+
+.csgo_standings {
+  margin: 3px;
+  display: inline-block;
+  padding: 10px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+#cod-socials {
+  margin: auto;
+  position: fixed;
+  right: 0px;
+  width: 50px;
+  padding: 10px;
+  text-align: left;
+}
+
+.socials {
+  text-align: center;
+}
+
+.fa {
+  box-shadow: 0 1px 2px 0 black;
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
