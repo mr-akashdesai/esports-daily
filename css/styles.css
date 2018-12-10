@@ -120,10 +120,6 @@ nav a:hover {
     visibility: hidden;
   }
 
-  .space {
-    display: none;
-  }
-
   .ArticeCard_Container {
     display: none;
   }
@@ -187,6 +183,7 @@ nav a:hover {
   /* applies to screens wider than 499px */
   body {
     background: #1a1a1a;
+    margin-top: 180px;
   }
 
   .menu {
@@ -227,6 +224,7 @@ nav a:hover {
   /* applies to screens wider than 999px */
   body {
     background-color: #1a1a1a;
+    margin-top: 150px;
   }
 }
 
@@ -318,20 +316,23 @@ div.HeaderText {
   -webkit-text-fill-color: transparent;
 }
 
-.space {
-  margin-top: 150px;
-}
-
 .homeSlides {
   display: none;
+}
+
+.homeSlides img {
+  width: 725px;
+  height: 420px;
 }
 
 img {
   vertical-align: middle;
 }
-footer{
-overflow: inherit;
+
+footer {
+  overflow: inherit;
 }
+
 /* Slideshow container */
 #slideshow-container {
   margin: auto;
@@ -471,7 +472,7 @@ overflow: inherit;
   font-size: 16px;
   background: #333333;
   border: 1px black solid;
-  height: 330px;
+  height: 340px;
   width: 350px;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -505,7 +506,8 @@ overflow: inherit;
   box-shadow: 0 1px 2px 0 black;
   display: flex;
   justify-content: center;
-  height: 215px;
+  height: 250px;
+  width: 348px;
   overflow: hidden;
 }
 
@@ -541,10 +543,14 @@ overflow: inherit;
 }
 
 @media (max-width: 500px) {
+  body {
+    margin-top: 140px;
+  }
+
   .NewsCard_container {
     height: auto;
-    width: inherit;
-    min-width: 315px;
+    width: auto;
+    max-width: 325px;
   }
 
   .NewsCard_date {
@@ -552,12 +558,9 @@ overflow: inherit;
     text-align: right;
   }
 
-  .NewsCard_row {
-    padding: 100px 0px 0px 10px;
-  }
-
   .NewsCard_featureImage {
-    height: 250px;
+    height: 200px;
+    width: auto;
   }
 }
 
@@ -567,7 +570,8 @@ overflow: inherit;
   }
 
   .NewsCard_featureImage {
-    height: 250px;
+    height: 200px;
+    width: auto;
   }
 }
 
@@ -777,9 +781,8 @@ overflow: inherit;
 .FN_NewsCard_featureImage {
   display: flex;
   justify-content: center;
-  height: auto;
-  min-width: 250px;
-  max-height: 150px;
+  width: 348px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -834,6 +837,7 @@ overflow: inherit;
 
   .FN_NewsCard_featureImage {
     height: 250px;
+    width: auto;
   }
 }
 
@@ -844,6 +848,7 @@ overflow: inherit;
 
   .FN_NewsCard_featureImage {
     height: 250px;
+    width: auto;
   }
 }
 
@@ -968,8 +973,8 @@ overflow: inherit;
 .CSGO_NewsCard_featureImage {
   display: flex;
   justify-content: center;
-  height: auto;
-  min-width: 150px;
+  width: 348px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -1009,7 +1014,7 @@ overflow: inherit;
   .CSGO_NewsCard_container {
     height: auto;
     width: inherit;
-    min-width: 315px;
+    max-width: 325px;
   }
 
   .CSGO_NewsCard_date {
@@ -1023,6 +1028,7 @@ overflow: inherit;
 
   .CSGO_NewsCard_featureImage {
     height: 250px;
+    width: auto;
   }
 }
 
@@ -1033,6 +1039,7 @@ overflow: inherit;
 
   .CSGO_NewsCard_featureImage {
     height: 250px;
+    width: auto;
   }
 }
 
@@ -1046,8 +1053,6 @@ overflow: inherit;
   content: "";
   clear: both;
 }
-
-
 
 .csgoScorecard_match-result {
   box-shadow: 0 1px 2px 0 black;
@@ -1231,16 +1236,15 @@ overflow: inherit;
   padding: 10px;
   text-align: left;
 }
+
 .socials {
   margin: auto;
   bottom: 0px;
   padding: 15px 0px 0px 20px;
   padding: 20px;
-    text-align: center;
-overflow: hidden;
+  text-align: center;
+  overflow: hidden;
 }
-
-
 
 .fa {
   padding: 20px;
@@ -1255,49 +1259,49 @@ overflow: hidden;
 }
 
 .fa-facebook {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #3B5998;
   color: white;
 }
 
 .fa-twitter {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #55ACEE;
   color: white;
 }
 
 .fa-google {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #dd4b39;
   color: white;
 }
 
 .fa-linkedin {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #007bb5;
   color: white;
 }
 
 .fa-youtube {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #bb0000;
   color: white;
 }
 
 .fa-instagram {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #125688;
   color: white;
 }
 
 .fa-pinterest {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #cb2027;
   color: white;
 }
 
 .fa-snapchat-ghost {
-    box-shadow: 0 1px 2px 0 black;
+  box-shadow: 0 1px 2px 0 black;
   background: #fffc00;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
