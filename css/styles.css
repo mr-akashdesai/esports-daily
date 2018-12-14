@@ -175,6 +175,9 @@ nav a:hover {
     grid-row-start: 3;
     grid-row-end: 4;
   }
+  .socials{
+    display: inline-block;
+  }
 }
 
 /* TABLET STYLES */
@@ -217,6 +220,9 @@ nav a:hover {
     display: grid;
     grid-template-columns: 400px auto auto;
   }
+  .socials{
+    display:inline-block;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -226,6 +232,7 @@ nav a:hover {
     background-color: #1a1a1a;
     margin-top: 150px;
   }
+
 }
 
 p {
@@ -293,7 +300,7 @@ h2:root {
   background-size: cover;
 }
 
-div.HeaderText {
+.HeaderText {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 47%, rgba(0, 0, 0, 0.65) 94%);
   overflow: hidden;
   margin-top: 0px;
@@ -303,17 +310,9 @@ div.HeaderText {
   height: 110vh;
   max-height: 110px;
   background-size: cover;
-  position: fixed;
+  text-align: center;
   display: block;
   -webkit-text-stroke: 1px #330080;
-}
-
-.first {
-  background: linear-gradient(to bottom, rgba(93, 49, 117, 1) 0%, rgba(85, 23, 193, 1) 100%);
-  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .homeSlides {
@@ -445,6 +444,7 @@ footer {
   padding: 5px 5px 5px 10px;
 }
 
+
 .ArticleCard_active {
   opacity: 1;
 }
@@ -498,7 +498,7 @@ footer {
 }
 
 .NewsCard_date {
-  padding-left: 190px;
+  padding-left: 194px;
   text-align: right;
 }
 
@@ -554,7 +554,7 @@ footer {
   }
 
   .NewsCard_date {
-    padding-left: 160px;
+    padding-left: 164px;
     text-align: right;
   }
 
